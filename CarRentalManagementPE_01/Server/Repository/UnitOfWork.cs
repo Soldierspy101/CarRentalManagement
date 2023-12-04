@@ -22,7 +22,6 @@ namespace CarRentalManagementPE_01.Server.Repository
         private IGenericRepository<Booking> _bookings;
         private IGenericRepository<Customer> _customers;
         private IGenericRepository<Vehicle> _vehicles;
-
         private UserManager<ApplicationUser> _userManager;
 
         public UnitOfWork(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
