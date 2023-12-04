@@ -27,8 +27,8 @@ namespace CarRentalManagementPE_01.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> GetVehicles()
         {
-            var vehicles = await _unitOfWork.Vehicles.GetAll();
-            return Ok(vehicles);
+            var Vehicles = await _unitOfWork.Vehicles.GetAll(includes: q => q.Include(x => x.Make).Include(x => x.Model).Include(x => x.Color));
+            return Ok(Vehicles);
 
         }
 
