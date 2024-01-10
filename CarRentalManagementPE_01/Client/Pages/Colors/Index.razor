@@ -4,8 +4,13 @@
 @attribute [Authorize]
 @using CarRentalManagementPE_01.Client.Shared
 
-
 <h3 class="car-title">Car Colors</h3>
+
+<a href="/colors/create/" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Color
+</a>
+<br />
 @if(Colors== null)
 {
     <div class="alert art-info">Loading Colors...</div>

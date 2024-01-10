@@ -7,6 +7,11 @@
 
 <h3 class="car-title">Car Customers</h3>
 
+<a href="/customers/create/" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Customer
+</a>
+<br/>
 @if(Customers== null)
 {
     <div class="alert art-info">Loading Customers...</div>
@@ -16,7 +21,9 @@ else
     <table class="table table-responsive">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Driving License</th>
+                <th>Contact Number</th>
+                <th>Email Address</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,6 +33,10 @@ else
         {
             <tr>
                 <td>@customer?.Id</td>
+                    <td>@customer.DrivingLicense</td>
+                    <td>@customer.ContactNumber</td>
+                    <td>@customer.EmailAddress</td>
+                    
                 <td>
                     @if (customer != null)
                     {

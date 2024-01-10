@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CarRentalManagementPE_01.Server.Data.Migrations
+namespace CarRentalManagementPE_01.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231120041449_AddApplicationTables")]
-    partial class AddApplicationTables
+    [Migration("20240103033920_newdata")]
+    partial class newdata
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,6 +94,26 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "3781efa7-66dc-47f0-860f-e506d04102e4",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "b048bec3-6bee-4d0b-ac36-f75c78706b06",
+                            Email = "admin@localhost.com",
+                            EmailConfirmed = false,
+                            FirstName = "Admin",
+                            LastName = "User",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@LOCALHOST.COM",
+                            NormalizedUserName = "ADMIN@LOCALHOST.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIpuwL3fNxrmTN1FtvJcYI4UgqosNrQzmGX+e2bIiC7s9iPK4vPjUzRCuY8EoZL6yQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "d9990b59-9d37-4e83-8982-0edf0556216f",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@localhost.com"
+                        });
                 });
 
             modelBuilder.Entity("CarRentalManagementPE_01.Shared.Domain.Booking", b =>
@@ -137,7 +157,7 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
                     b.ToTable("Bookings");
                 });
 
-            modelBuilder.Entity("CarRentalManagementPE_01.Shared.Domain.Color", b =>
+            modelBuilder.Entity("CarRentalManagementPE_01.Shared.Domain.Colors", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -163,6 +183,26 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Colors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(8907),
+                            DateUpdated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(8920),
+                            Name = "Black",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(8922),
+                            DateUpdated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(8923),
+                            Name = "Blue",
+                            UpdatedBy = "System"
+                        });
                 });
 
             modelBuilder.Entity("CarRentalManagementPE_01.Shared.Domain.Customer", b =>
@@ -192,6 +232,12 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmailAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UpdatedBy")
@@ -228,6 +274,26 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Makes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9387),
+                            DateUpdated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9389),
+                            Name = "BMW",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9390),
+                            DateUpdated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9391),
+                            Name = "Toyota",
+                            UpdatedBy = "System"
+                        });
                 });
 
             modelBuilder.Entity("CarRentalManagementPE_01.Shared.Domain.Model", b =>
@@ -256,6 +322,44 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Models");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9671),
+                            DateUpdated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9672),
+                            Name = "3 Series",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9673),
+                            DateUpdated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9674),
+                            Name = "X5",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9675),
+                            DateUpdated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9676),
+                            Name = "Prius",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9677),
+                            DateUpdated = new DateTime(2024, 1, 3, 11, 39, 20, 204, DateTimeKind.Local).AddTicks(9678),
+                            Name = "Rav4",
+                            UpdatedBy = "System"
+                        });
                 });
 
             modelBuilder.Entity("CarRentalManagementPE_01.Shared.Domain.Vehicle", b =>
@@ -286,6 +390,9 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
 
                     b.Property<int>("ModelId")
                         .HasColumnType("int");
+
+                    b.Property<double>("RentalRate")
+                        .HasColumnType("float");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -470,6 +577,20 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ad2bcf0c-20db-474f-8407-5a6b159518ba",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        },
+                        new
+                        {
+                            Id = "bd2bcf0c-20db-474f-8407-5a6b159518bb",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -559,6 +680,13 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "3781efa7-66dc-47f0-860f-e506d04102e4",
+                            RoleId = "ad2bcf0c-20db-474f-8407-5a6b159518ba"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -603,7 +731,7 @@ namespace CarRentalManagementPE_01.Server.Data.Migrations
 
             modelBuilder.Entity("CarRentalManagementPE_01.Shared.Domain.Vehicle", b =>
                 {
-                    b.HasOne("CarRentalManagementPE_01.Shared.Domain.Color", "Color")
+                    b.HasOne("CarRentalManagementPE_01.Shared.Domain.Colors", "Color")
                         .WithMany()
                         .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
